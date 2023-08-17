@@ -1,0 +1,11 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 36a1af527df749b5b75ccd4deef27d4b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot i2c_bit_shift_tb_behav xil_defaultlib.i2c_bit_shift_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'A0' [C:/Users/x-lotte/Desktop/AC_I2C_Control/prj/i2c_bit_shift_tb.v:40]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'A1' [C:/Users/x-lotte/Desktop/AC_I2C_Control/prj/i2c_bit_shift_tb.v:41]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'A2' [C:/Users/x-lotte/Desktop/AC_I2C_Control/prj/i2c_bit_shift_tb.v:42]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'WP' [C:/Users/x-lotte/Desktop/AC_I2C_Control/prj/i2c_bit_shift_tb.v:43]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

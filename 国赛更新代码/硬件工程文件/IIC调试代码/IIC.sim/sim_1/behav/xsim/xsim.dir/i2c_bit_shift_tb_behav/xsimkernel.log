@@ -1,0 +1,4 @@
+Running: xsim.dir/i2c_bit_shift_tb_behav/xsimk.exe -simmode gui -wdb i2c_bit_shift_tb_behav.wdb -simrunnum 0 -socket 54132
+Design successfully loaded
+Design Loading Memory Usage: 6724 KB (Peak: 6724 KB)
+Design Loading CPU Usage: 15 ms

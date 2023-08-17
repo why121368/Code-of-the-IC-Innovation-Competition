@@ -1,0 +1,419 @@
+
+*** Running vivado
+    with args -log i2c_control.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source i2c_control.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source i2c_control.tcl -notrace
+Command: synth_design -top i2c_control -part xc7a35tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 35496 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 371.742 ; gain = 100.473
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'i2c_control' [C:/Users/x-lotte/Desktop/AC_I2C_Control/prj/i2c_control.v:1]
+	Parameter WR bound to: 6'b000001 
+	Parameter STA bound to: 6'b000010 
+	Parameter RD bound to: 6'b000100 
+	Parameter STO bound to: 6'b001000 
+	Parameter ACK bound to: 6'b010000 
+	Parameter NACK bound to: 6'b100000 
+	Parameter IDLE bound to: 7'b0000001 
+	Parameter WR_REG bound to: 7'b0000010 
+	Parameter WAIT_WR_DONE bound to: 7'b0000100 
+	Parameter WR_REG_DONE bound to: 7'b0001000 
+	Parameter RD_REG bound to: 7'b0010000 
+	Parameter WAIT_RD_DONE bound to: 7'b0100000 
+	Parameter RD_REG_DONE bound to: 7'b1000000 
+INFO: [Synth 8-6157] synthesizing module 'i2c_bit_shift' [C:/Users/x-lotte/Desktop/AC_I2C_Control/prj/i2c_bit_shift.v:1]
+	Parameter SYS_CLOCK bound to: 50000000 - type: integer 
+	Parameter SCL_CLOCK bound to: 400000 - type: integer 
+	Parameter SCL_CNT_M bound to: 30 - type: integer 
+	Parameter WR bound to: 6'b000001 
+	Parameter STA bound to: 6'b000010 
+	Parameter RD bound to: 6'b000100 
+	Parameter STO bound to: 6'b001000 
+	Parameter ACK bound to: 6'b010000 
+	Parameter NACK bound to: 6'b100000 
+	Parameter IDLE bound to: 8'b00000001 
+	Parameter GEN_STA bound to: 8'b00000010 
+	Parameter WR_DATA bound to: 8'b00000100 
+	Parameter RD_DATA bound to: 8'b00001000 
+	Parameter CHECK_ACK bound to: 8'b00010000 
+	Parameter GEN_ACK bound to: 8'b00100000 
+	Parameter GEN_STO bound to: 8'b01000000 
+INFO: [Synth 8-226] default block is never used [C:/Users/x-lotte/Desktop/AC_I2C_Control/prj/i2c_bit_shift.v:140]
+INFO: [Synth 8-226] default block is never used [C:/Users/x-lotte/Desktop/AC_I2C_Control/prj/i2c_bit_shift.v:201]
+WARNING: [Synth 8-5788] Register i2c_sclk_reg in module i2c_bit_shift is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/x-lotte/Desktop/AC_I2C_Control/prj/i2c_bit_shift.v:119]
+INFO: [Synth 8-6155] done synthesizing module 'i2c_bit_shift' (1#1) [C:/Users/x-lotte/Desktop/AC_I2C_Control/prj/i2c_bit_shift.v:1]
+WARNING: [Synth 8-5788] Register cnt_reg in module i2c_control is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/x-lotte/Desktop/AC_I2C_Control/prj/i2c_control.v:92]
+WARNING: [Synth 8-5788] Register RW_Done_reg in module i2c_control is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/x-lotte/Desktop/AC_I2C_Control/prj/i2c_control.v:94]
+INFO: [Synth 8-6155] done synthesizing module 'i2c_control' (2#1) [C:/Users/x-lotte/Desktop/AC_I2C_Control/prj/i2c_control.v:1]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 427.500 ; gain = 156.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 427.500 ; gain = 156.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcsg324-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcsg324-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 427.500 ; gain = 156.230
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'i2c_bit_shift'
+INFO: [Synth 8-5546] ROM "Rx_DATA" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i2c_sdat_oe" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i2c_sdat_oe" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i2c_sdat_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i2c_sdat_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Trans_Done" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ack_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i2c_sclk" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i2c_sclk" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i2c_sclk" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i2c_sclk" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "en_div_cnt" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'i2c_control'
+INFO: [Synth 8-5546] ROM "Cmd" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Cmd" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Tx_DATA" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cnt" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RW_Done" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "rddata" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                    IDLE |                         00000001 |                         00000001
+                 GEN_STA |                         00000010 |                         00000010
+                 WR_DATA |                         00000100 |                         00000100
+               CHECK_ACK |                         00010000 |                         00010000
+                 RD_DATA |                         00001000 |                         00001000
+                 GEN_ACK |                         00100000 |                         00100000
+                 GEN_STO |                         01000000 |                         01000000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'i2c_bit_shift'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                    IDLE |                          0000001 |                          0000001
+                  WR_REG |                          0000010 |                          0000010
+            WAIT_WR_DONE |                          0000100 |                          0000100
+             WR_REG_DONE |                          0001000 |                          0001000
+                  RD_REG |                          0010000 |                          0010000
+            WAIT_RD_DONE |                          0100000 |                          0100000
+             RD_REG_DONE |                          1000000 |                          1000000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'i2c_control'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 427.500 ; gain = 156.230
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 2     
++---Registers : 
+	               20 Bit    Registers := 1     
+	                8 Bit    Registers := 4     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 2     
+	   6 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 2     
+	   8 Input      7 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 2     
+	   6 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 2     
+	   4 Input      6 Bit        Muxes := 1     
+	   6 Input      6 Bit        Muxes := 1     
+	   8 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 6     
+	   8 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 5     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 20    
+	   4 Input      1 Bit        Muxes := 17    
+	   8 Input      1 Bit        Muxes := 24    
+	   6 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module i2c_control 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 2     
+	   6 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 2     
+	   8 Input      7 Bit        Muxes := 1     
+	   6 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 2     
+	   4 Input      6 Bit        Muxes := 1     
+	   6 Input      6 Bit        Muxes := 1     
+	   8 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 2     
+	   8 Input      1 Bit        Muxes := 11    
+Module i2c_bit_shift 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 2     
++---Registers : 
+	               20 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   8 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 4     
+	   8 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 16    
+	   4 Input      1 Bit        Muxes := 15    
+	   8 Input      1 Bit        Muxes := 13    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "i2c_bit_shift/state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i2c_bit_shift/Trans_Done" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i2c_bit_shift/i2c_sdat_oe" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i2c_bit_shift/Rx_DATA" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3886] merging instance 'Cmd_reg[2]' (FDCE) to 'Cmd_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Cmd_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\i2c_bit_shift/state_reg[7] )
+INFO: [Synth 8-3886] merging instance 'i2c_bit_shift/div_cnt_reg[19]' (FDC) to 'i2c_bit_shift/div_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i2c_bit_shift/div_cnt_reg[18]' (FDC) to 'i2c_bit_shift/div_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i2c_bit_shift/div_cnt_reg[17]' (FDC) to 'i2c_bit_shift/div_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i2c_bit_shift/div_cnt_reg[15]' (FDC) to 'i2c_bit_shift/div_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i2c_bit_shift/div_cnt_reg[16]' (FDC) to 'i2c_bit_shift/div_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i2c_bit_shift/div_cnt_reg[10]' (FDC) to 'i2c_bit_shift/div_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i2c_bit_shift/div_cnt_reg[11]' (FDC) to 'i2c_bit_shift/div_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i2c_bit_shift/div_cnt_reg[12]' (FDC) to 'i2c_bit_shift/div_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i2c_bit_shift/div_cnt_reg[13]' (FDC) to 'i2c_bit_shift/div_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i2c_bit_shift/div_cnt_reg[14]' (FDC) to 'i2c_bit_shift/div_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i2c_bit_shift/div_cnt_reg[8]' (FDC) to 'i2c_bit_shift/div_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i2c_bit_shift/div_cnt_reg[9]' (FDC) to 'i2c_bit_shift/div_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i2c_bit_shift/div_cnt_reg[7]' (FDC) to 'i2c_bit_shift/div_cnt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i2c_bit_shift/div_cnt_reg[5]' (FDC) to 'i2c_bit_shift/div_cnt_reg[6]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\i2c_bit_shift/div_cnt_reg[6] )
+INFO: [Synth 8-3886] merging instance 'cnt_reg[3]' (FDE) to 'cnt_reg[7]'
+INFO: [Synth 8-3886] merging instance 'cnt_reg[4]' (FDE) to 'cnt_reg[7]'
+INFO: [Synth 8-3886] merging instance 'cnt_reg[5]' (FDE) to 'cnt_reg[7]'
+INFO: [Synth 8-3886] merging instance 'cnt_reg[6]' (FDE) to 'cnt_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cnt_reg[7] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 570.555 ; gain = 299.285
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 570.555 ; gain = 299.285
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 571.879 ; gain = 300.609
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 571.879 ; gain = 300.609
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 571.879 ; gain = 300.609
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 571.879 ; gain = 300.609
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 571.879 ; gain = 300.609
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 571.879 ; gain = 300.609
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 571.879 ; gain = 300.609
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |BUFG  |     1|
+|2     |LUT1  |     4|
+|3     |LUT2  |    15|
+|4     |LUT3  |     6|
+|5     |LUT4  |    15|
+|6     |LUT5  |    27|
+|7     |LUT6  |    72|
+|8     |FDCE  |    55|
+|9     |FDPE  |     4|
+|10    |FDRE  |     5|
+|11    |IBUF  |    37|
+|12    |IOBUF |     1|
+|13    |OBUF  |    11|
++------+------+------+
+
+Report Instance Areas: 
++------+----------------+--------------+------+
+|      |Instance        |Module        |Cells |
++------+----------------+--------------+------+
+|1     |top             |              |   253|
+|2     |  i2c_bit_shift |i2c_bit_shift |   120|
++------+----------------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 571.879 ; gain = 300.609
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 571.879 ; gain = 300.609
+Synthesis Optimization Complete : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 571.879 ; gain = 300.609
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 667.117 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+72 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 667.117 ; gain = 408.852
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 667.117 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/MyWork/test/IIC/IIC.runs/synth_1/i2c_control.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file i2c_control_utilization_synth.rpt -pb i2c_control_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Aug 13 16:55:25 2023...

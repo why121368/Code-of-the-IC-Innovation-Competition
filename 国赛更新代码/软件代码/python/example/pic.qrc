@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="新前缀">
+    <file>data/集创赛LOGO 不带字.png</file>
+  </qresource>
+</RCC>

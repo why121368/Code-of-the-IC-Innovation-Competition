@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"C:/Users/x-lotte/Desktop/AC_I2C_Control/prj/M24LC04B.v" \
+"C:/Users/x-lotte/Desktop/AC_I2C_Control/prj/i2c_bit_shift.v" \
+"C:/Users/x-lotte/Desktop/AC_I2C_Control/prj/i2c_bit_shift_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
